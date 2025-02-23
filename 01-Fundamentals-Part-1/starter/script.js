@@ -127,7 +127,7 @@
 // }
 // console.log(century); // Error: century is not defined
 
-// // type conversion
+// type conversion
 // const inputYear = '1991';
 // console.log(inputYear + 18);
 // console.log(Number(inputYear), inputYear);
@@ -137,7 +137,7 @@
 
 // console.log(String(23), 23);
 
-// // type coercion
+// type coercion
 // console.log('I am ' + 23 + ' years old');
 // console.log('I am ' + '23' + ' years old');
 // console.log('23' - '10' - 3);
@@ -195,12 +195,12 @@
 // if (favourite != 23) console.log('Why not 23?'); // !== is loose inequality operator
 
 
-const hasDriversLicense = true; // A
-const hasGoodVision = true; // B
+// const hasDriversLicense = true; // A
+// const hasGoodVision = true; // B
 
-console.log(hasDriversLicense && hasGoodVision);
-console.log(hasDriversLicense || hasGoodVision);
-console.log(!hasDriversLicense);
+// console.log(hasDriversLicense && hasGoodVision);
+// console.log(hasDriversLicense || hasGoodVision);
+// console.log(!hasDriversLicense);
 
 
 // if (hasDriversLicense && hasGoodVision) {
@@ -209,13 +209,28 @@ console.log(!hasDriversLicense);
 //     console.log('Someone else should drive...');
 // }
 
-const isTired = false; // C
-console.log(hasDriversLicense || hasGoodVision || isTired);
-console.log(hasDriversLicense && hasGoodVision && isTired);
+// const isTired = false; // C
+// console.log(hasDriversLicense || hasGoodVision || isTired);
+// console.log(hasDriversLicense && hasGoodVision && isTired);
 
-if (hasDriversLicense && hasGoodVision && !isTired) {
-    console.log('Sarah is able to drive');
-} else {
-    console.log('Someone else should drive...');
-}
+// if (hasDriversLicense && hasGoodVision && !isTired) {
+//     console.log('Sarah is able to drive');
+// } else {
+//     console.log('Someone else should drive...');
+// }
 
+// const age = 15;
+// age >= 18 ? console.log("I like to drink wine!") : console.log("I like to drink water!");
+
+// const drink = age >= 18 ? 'Wine!' : "Water";
+// console.log(drink);
+
+// let drink2;
+// if (age >= 18) {
+//     drink2 = 'Wine!';
+// } else {
+//     drink2 = 'water!';
+// }
+// console.log(drink2)
+
+// console.log(`I like to drink ${age >= 18 ? 'wine!' : "water"}`)
