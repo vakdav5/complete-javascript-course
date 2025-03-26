@@ -105,6 +105,7 @@ console.log(z === window.z);
 // 5. Always declare your functions first and only use them after declaration
 */
 
+/*
 console.log(this); // simply is the 'window' object
 
 const clacAge = function (birthYear) {
@@ -148,3 +149,74 @@ matilda.calcAge();
 const f = jonas.calcAge;
 f(); // this will be just like a regular function, the this function will be
 // undefined and hence give an error
+*/
+
+/*
+var firstName = 'Matilda';
+
+const jonas = {
+  firstName: 'Jonas',
+  year: 1991,
+  calcAge: function () {
+    // console.log(this); // will be the jonas object
+    console.log(2037 - this.year);
+
+    const isMillennial = function () {
+      console.log(this);
+      console.log(this.year >= 1981 && this.year <= 1996);
+    };
+    isMillennial();
+  },
+  greet: () => console.log(`Hey ${this.firstName}`),
+  // Arrow function don't get their own this keyword, they use
+  // their parent's this keyword
+};
+jonas.greet();
+jonas.calcAge();
+console.log(this.firstName);
+/// Never use a arrow function as a method on an object ///
+*/
+
+// Object References in Practice (Shallow vs. Deep Copies)
+
+const jessica1 = {
+  firstName: 'Jessica',
+  lastName: 'Williams',
+  age: 27,
+};
+
+function marryPerson(originalPerson, newLastName) {
+  originalPerson.lastName = newLastName;
+  return originalPerson;
+}
+
+const marriedJessica = marryPerson(jessica1, 'Davis');
+// const marriedJessica = jessica;
+// marriedJessica.lastName = 'Davis';
+
+console.log('Before:', jessica1);
+console.log('After:', marriedJessica);
+
+const jessica = {
+  firstName: 'Jessica',
+  lastName: 'Williams',
+  age: 27,
+  family: ['Alice', 'Bob'],
+};
+// Shallow Copy
+const jessicaCopy = { ...jessica };
+jessicaCopy.lastName = 'Davis';
+
+// jessicaCopy.family.push('Mary');
+// jessicaCopy.family.push('John');
+
+// console.log('Before:', jessica);
+// console.log('After:', jessicaCopy);
+
+// Deep Copy
+const jessicaClone = structuredClone(jessica);
+jessicaClone.family.push('Mary');
+jessicaClone.family.push('John');
+
+console.log('Before clone:', jessica);
+console.log('After clone:', jessicaClone);
